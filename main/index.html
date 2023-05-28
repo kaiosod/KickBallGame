@@ -1,20 +1,68 @@
 <html> 
   <head>   
-    <title>ESP8266 Page</title> 
+    <title>KickBall</title> 
+    <style>
+      #title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+
+      .joystick {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 130px;
+      }
+
+      .button-lr {
+        background-color: yellow;
+        font-size: 20px;
+        width: 200px;
+        height: 200px;
+        margin-right: 50px;
+        padding: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 50%;
+        
+      }
+
+      #button-hit{
+        background-color: red;
+        font-size: 20px;
+        width: 200px;
+        height: 200px;
+        margin-right: 50px;
+        padding: 50px;
+        margin-left: 70px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 50%;
+      }
+    </style>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>  
-     <style>     
-       h1 {text-align:center; }     
-       td {font-size: 50%; padding-top: 30px;}     
-       .temp {font-size:150%; color: #FF0000;}
-     </style> 
    </head>  
-   <body>    
-     <p>Página do sensor ESP8266</p>    
-     <div id='div1'>        
-        <table>           
-          <tr>            
-           <td>Temperatura</td><td class='temp'>%.2f</td>          
-         </tr>          
-      </div> 
+   <body> 
+
+    <header>
+      <div>
+        <h1 id="title">Kick Ball Game</h1>
+      </div>
+    </header>
+    
+    <div class="joystick">
+      <a href="#">
+        <button class="button-lr">Direita</button>
+      </a>
+      <a href="#">
+        <button class="button-lr">Esquerda</button>
+      </a>
+      <a href="#">
+        <button id="button-hit">Chute</button>
+      </a>
+    </div>
+
     </body>  
 </html>
