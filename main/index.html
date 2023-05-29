@@ -41,6 +41,47 @@
         padding-right: 10px;
         border-radius: 50%;
       }
+    @media (max-width: 500px){
+      #title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+
+      .joystick {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 130px;
+      }
+
+      .button-lr {
+        background-color: yellow;
+        font-size: 20px;
+        width: 200px;
+        height: 200px;
+        margin-right: 50px;
+        padding: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 50%;
+        
+      }
+
+      #button-hit{
+        background-color: red;
+        font-size: 20px;
+        width: 200px;
+        height: 200px;
+        margin-right: 50px;
+        padding: 50px;
+        margin-left: 70px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 50%;
+      }
+    }
     </style>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>  
    </head>  
@@ -53,10 +94,10 @@
     </header>
     
     <div class="joystick">
-      <a href="#">
+      <a href="http://192.168.4.1/on">
         <button class="button-lr">Direita</button>
       </a>
-      <a href="#">
+      <a href="http://192.168.4.1/off">
         <button class="button-lr">Esquerda</button>
       </a>
       <a href="#">
