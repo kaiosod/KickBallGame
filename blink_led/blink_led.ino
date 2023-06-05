@@ -24,21 +24,24 @@ void handleRoot() {
 
 void handleOn() {
   ledState = true;
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(0, HIGH);
   server.sendHeader("Location", "/");
   server.send(303);
 }
 
 void handleOff() {
   ledState = false;
-  digitalWrite(ledPin, LOW);
+  digitalWrite(2, LOW);
   server.sendHeader("Location", "/");
   server.send(303);
 }
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin, LOW);
+  pinMode(0, OUTPUT);
+  digitalWrite(0, LOW);
+
+  pinMode(2, OUTPUT);
+  digitalWrite(2, LOW);
 
   WiFi.softAP(ssid, password);
 

@@ -6,12 +6,8 @@
 const char* ssid = "KickBall"; // Nome da rede Wi-Fi do Access Point
 const char* password = "KB102030"; // Senha para o Access Point
 
-// Declaração VAR
 const int ledPin = 2; // Led do ESP8266
 bool ledState = false; // Estado atual do LED
-
-const int INP1 = 5;
-const int INP2 = 6;
 
 ESP8266WebServer server(80);
 
@@ -133,26 +129,21 @@ void handleRoot() {
 
 void handleOn() {
   ledState = true;
-  // Pin 0: 
-  digitalWrite(INP1, HIGH);
+  digitalWrite(ledPin, HIGH);
   server.sendHeader("Location", "/");
   server.send(303);
 }
 
 void handleOff() {
   ledState = false;
-  // Pin: 2
-  digitalWrite(INP2, LOW);
+  digitalWrite(ledPin, LOW);
   server.sendHeader("Location", "/");
   server.send(303);
 }
 
 void setup() {
-  pinMode(INP1, OUTPUT);
-  digitalWrite(INP1, LOW);
-
-  pinMode(INP2, OUTPUT);
-  digitalWrite(INP2, LOW);
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
 
   WiFi.softAP(ssid, password);
 
